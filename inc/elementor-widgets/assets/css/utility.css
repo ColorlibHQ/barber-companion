@@ -1,0 +1,39 @@
+/* -------------------------
+:: utility Class
+---------------------------- */
+.barber-pt-100 {
+    padding-top: 100px;
+}
+.barber-pt-80 {
+    padding-top: 80px;
+}
+.barber-pt-70 {
+    padding-top: 70px;
+}
+.barber-pt-60 {
+    padding-top: 60px;
+}
+.barber-pt-50 {
+    padding-top: 50px;
+}
+.barber-pt-30 {
+    padding-top: 30px;
+}
+.barber-pb-100 {
+    padding-bottom: 100px;
+}
+.barber-pb-80 {
+    padding-bottom: 80px;
+}
+.barber-pb-70 {
+    padding-bottom: 70px;
+}
+.barber-pb-60 {
+    padding-bottom: 60px;
+}
+.barber-pb-50 {
+    padding-bottom: 50px;
+}
+.barber-pb-30 {
+    padding-bottom: 30px;
+}
