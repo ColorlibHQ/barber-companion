@@ -41,7 +41,7 @@ add_action( 'wp_enqueue_scripts', 'barber_companion_frontend_scripts', 99 );
 function barber_companion_frontend_scripts() {
 
 	wp_enqueue_script( 'barber-companion-script', plugins_url( '../js/loadmore-ajax.js', __FILE__ ), array( 'jquery' ), '1.0', true );
-	wp_enqueue_script( 'barber-common-js', plugins_url( '../js/common.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'barber-common-js', plugins_url( '../js/common.js', __FILE__ ), array( 'jquery' ), '1.0-s1', true );
 
 }
 // 

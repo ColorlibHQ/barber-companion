@@ -10,7 +10,7 @@
             margin: 0,
             dots: false,
             nav: true,
-            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
+            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>']
         });
     }
 
@@ -25,7 +25,7 @@
             dots: false,
             nav: true,
             startPosition: 1,
-            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
             responsive: {
                 0: {
                     items: 1
@@ -73,7 +73,7 @@
             margin: 50,
             center: true,
             nav: true,
-            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
             responsive: {
                 0: {
                     items: 1
@@ -97,7 +97,7 @@
             margin: 0,
             center: true,
             nav: true,
-            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
             responsive: {
                 0: {
                     items: 1
@@ -156,16 +156,19 @@
     if ($.fn.scrollUp) {
         $.scrollUp({
             scrollSpeed: 1500,
-            scrollText: '<i class="fa fa-angle-up"></i>'
+            scrollText: '<i class="fa-solid fa-angle-up"></i>'
         });
     }
 
-    if ($.fn.counterUp) {
-        $('.counter').counterUp({
-            delay: 10,
-            time: 2000
-        });
-    }
+    (function startCounters() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startCounters);
+            return;
+        }
+        if (window.ColorlibUI) {
+            window.ColorlibUI.counter('.counter', { time: 2000 });
+        }
+    })();
 
     // Background video
     var $selector = $('[data-videoid]');

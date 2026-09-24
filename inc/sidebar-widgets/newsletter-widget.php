@@ -51,7 +51,7 @@ class Barber_newsletter_widget extends WP_Widget {
                     <input class="form-control" name="EMAIL" placeholder="<?php esc_html_e( 'Your Email Address', 'barber-companion' ); ?>" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" required="" type="email">
 
                     <div class="subscribe_btn input-group-append">
-                        <button class="btn_1 btn-default text-uppercase email_icon newsletter-submit button-contactForm" type="submit"><i class="fa fa-paper-plane"></i></button>
+                        <button class="btn_1 btn-default text-uppercase email_icon newsletter-submit button-contactForm" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                     </div>
                     
                     <div style="position: absolute; left: -5000px;">

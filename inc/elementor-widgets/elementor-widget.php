@@ -310,10 +310,6 @@ if ( !class_exists( 'Barber_El_Widgets' ) ) {
             // wp_enqueue_script( 'jquery-youtubebackground', plugins_url( 'assets/js/jquery.youtubebackground.js', __FILE__ ), array('jquery'), '1.0.5', true );
             // progress loader canvas js
             // wp_register_script( 'progress-loader-canvas', plugins_url( 'assets/js/progress-loader-canvas.js', __FILE__ ), array('jquery'), '1.0', true );
-            // waypoints js
-            // wp_enqueue_script( 'waypoints', plugins_url( 'assets/js/waypoints.js', __FILE__ ), array('jquery'), '2.0.3', true );
-            // jquery counterup js
-            // wp_enqueue_script( 'jquery-counterup', plugins_url( 'assets/js/jquery.counterup.js', __FILE__ ), array('jquery'), '1.0', true );
             // imagesLoaded js
             // wp_enqueue_script( 'imagesLoaded', plugins_url( 'assets/js/imagesLoaded.js', __FILE__ ), array('jquery'), '4.1.3', true );
             // isotope js
@@ -323,7 +319,7 @@ if ( !class_exists( 'Barber_El_Widgets' ) ) {
             // map active js
             // wp_register_script( 'barber-map-active', plugins_url( 'assets/js/map-active.js', __FILE__ ), array('jquery'), '1.0', true );
             // barber companion main js
-            wp_enqueue_script( 'barber-companion', plugins_url( 'assets/js/barber-companion-main.js', __FILE__ ), array('jquery'), '1.0', true );
+            wp_enqueue_script( 'barber-companion', plugins_url( 'assets/js/barber-companion-main.js', __FILE__ ), array('jquery'), '1.0-s1', true );
 
 
         }

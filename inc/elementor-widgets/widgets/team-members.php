@@ -295,13 +295,13 @@ class Barber_Team_Members extends Widget_Base {
                                     <div class="social_link">
                                         <?php 
                                             if ( $fb_url ) { 
-                                                echo "<a href='{$fb_url}'><i class='fa fa-facebook'></i></a>";
+                                                echo "<a href='{$fb_url}'><i class='fa-brands fa-facebook'></i></a>";
                                             }
                                             if ( $tw_url ) { 
-                                                echo "<a href='{$tw_url}'><i class='fa fa-twitter'></i></a>";
+                                                echo "<a href='{$tw_url}'><i class='fa-brands fa-twitter'></i></a>";
                                             }
                                             if ( $ins_url ) { 
-                                                echo "<a href='{$ins_url}'><i class='fa fa-instagram'></i></a>";
+                                                echo "<a href='{$ins_url}'><i class='fa-brands fa-instagram'></i></a>";
                                             }
                                         ?>
                                     </div>

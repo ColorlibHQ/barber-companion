@@ -243,7 +243,7 @@ class Barber_Video_Section extends Widget_Base {
                                 }
                                 if ( $video_url ) { 
                                     echo "<a href='{$video_url}' class='popup-video'>
-                                    <i class='fa fa-play'></i>
+                                    <i class='fa-solid fa-play'></i>
                                 </a>";
                                 }
                             ?>
