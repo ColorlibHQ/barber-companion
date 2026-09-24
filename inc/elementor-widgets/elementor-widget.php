@@ -319,7 +319,7 @@ if ( !class_exists( 'Barber_El_Widgets' ) ) {
             // map active js
             // wp_register_script( 'barber-map-active', plugins_url( 'assets/js/map-active.js', __FILE__ ), array('jquery'), '1.0', true );
             // barber companion main js
-            wp_enqueue_script( 'barber-companion', plugins_url( 'assets/js/barber-companion-main.js', __FILE__ ), array('jquery'), '1.0-s1', true );
+            wp_enqueue_script( 'barber-companion', plugins_url( 'assets/js/barber-companion-main.js', __FILE__ ), array( 'masonry', 'barber-ui-js' ), '1.0-s2', true );
 
 
         }

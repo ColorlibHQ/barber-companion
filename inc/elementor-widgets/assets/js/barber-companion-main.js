@@ -1,207 +1,169 @@
-(function ($) {
-    'use strict';
+/**
+ * Barber Companion widgets without jQuery: carousels, the portfolio filter,
+ * scroll-to-top and counters, on the ColorlibUI bundle the Barber theme loads.
+ * Runs at DOM ready so it works whichever order the scripts are printed in.
+ */
+(function () {
+  'use strict';
 
-    if ($.fn.owlCarousel) {
-        $(".hero-slides").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            smartSpeed: 800,
-            margin: 0,
-            dots: false,
-            nav: true,
-            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>']
-        });
-    }
+  function run() {
+    var UI = window.ColorlibUI;
+    if (!UI) return;
 
-    if ($.fn.owlCarousel) {
-        $(".barber-service-slides").owlCarousel({
-            items: 3,
-            loop: true,
-            autoplay: true,
-            smartSpeed: 800,
-            margin: 30,
-            center: true,
-            dots: false,
-            nav: true,
-            startPosition: 1,
-            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                }
-            }
-        });
-    }
+    UI.owl('.hero-slides', {
+      items: 1,
+      loop: true,
+      autoplay: true,
+      smartSpeed: 800,
+      margin: 0,
+      dots: false,
+      nav: true,
+      navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>']
+    });
 
-    if ($.fn.owlCarousel) {
-        $(".barber-workflow-slides").owlCarousel({
-            items: 3,
-            loop: true,
-            autoplay: true,
-            smartSpeed: 800,
-            margin: 30,
-            center: true,
-            dots: true,
-            startPosition: 1,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                }
-            }
-        });
-    }
-
-    if ($.fn.owlCarousel) {
-        $(".barber-team-slides").owlCarousel({
-            items: 3,
-            loop: true,
-            autoplay: true,
-            smartSpeed: 800,
-            margin: 50,
-            center: true,
-            nav: true,
-            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                }
-            }
-        });
-    }
-
-    if ($.fn.owlCarousel) {
-        $(".testimonials-slides").owlCarousel({
-            items: 3,
-            loop: true,
-            autoplay: true,
-            smartSpeed: 1500,
-            margin: 0,
-            center: true,
-            nav: true,
-            navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                }
-            }
-        });
-    }
-
-    if ($.fn.barfiller) {
-
-        $('.bar').each(  function(){
-            var $this = $(this),
-                $color = $this.data('color');
-                 
-            $this.barfiller({
-                tooltip: true,
-                duration: 1000,
-                barColor: $color,
-                animateOnResize: true
-            });
-
-
-        })
-
-    }
-    if ($.fn.imagesLoaded) {
-        $('.barber-portfolio').imagesLoaded(function () {
-            // filter items on button click
-            $('.portfolio-menu').on('click', 'p', function () {
-                var filterValue = $(this).attr('data-filter');
-                $grid.isotope({
-                    filter: filterValue
-                });
-            });
-            // init Isotope
-            var $grid = $('.barber-portfolio').isotope({
-                itemSelector: '.single_gallery_item',
-                percentPosition: true,
-                masonry: {
-                    columnWidth: '.single_gallery_item'
-                }
-            });
-        });
-    }
-
-    $('.portfolio-menu button.btn').on('click', function () {
-        $('.portfolio-menu button.btn').removeClass('active');
-        $(this).addClass('active');
-    })
-    if ($.fn.scrollUp) {
-        $.scrollUp({
-            scrollSpeed: 1500,
-            scrollText: '<i class="fa-solid fa-angle-up"></i>'
-        });
-    }
-
-    (function startCounters() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', startCounters);
-            return;
+    UI.owl('.barber-service-slides', {
+      items: 3,
+      loop: true,
+      autoplay: true,
+      smartSpeed: 800,
+      margin: 30,
+      center: true,
+      dots: false,
+      nav: true,
+      startPosition: 1,
+      navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        768: {
+          items: 3
         }
-        if (window.ColorlibUI) {
-            window.ColorlibUI.counter('.counter', { time: 2000 });
+      }
+    });
+
+    UI.owl('.barber-workflow-slides', {
+      items: 3,
+      loop: true,
+      autoplay: true,
+      smartSpeed: 800,
+      margin: 30,
+      center: true,
+      dots: true,
+      startPosition: 1,
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        768: {
+          items: 3
         }
-    })();
+      }
+    });
 
-    // Background video
-    var $selector = $('[data-videoid]');
+    UI.owl('.barber-team-slides', {
+      items: 3,
+      loop: true,
+      autoplay: true,
+      smartSpeed: 800,
+      margin: 50,
+      center: true,
+      nav: true,
+      navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        768: {
+          items: 3
+        }
+      }
+    });
 
-    if( $selector.length ){
-        $selector.each( function(){
-            var $this = $(this);
-            $this.YTPlayer({
-                fitToBackground: true,
-                videoId: $this.data('videoid')
-            });
+    UI.owl('.testimonials-slides', {
+      items: 3,
+      loop: true,
+      autoplay: true,
+      smartSpeed: 1500,
+      margin: 0,
+      center: true,
+      nav: true,
+      navText: ['<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>', '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        768: {
+          items: 3
+        }
+      }
+    });
+
+    // Only when some other script has loaded imagesLoaded, as before: this
+    // plugin's own copy is not enqueued.
+    if (window.imagesLoaded) {
+      UI.imagesLoaded('.barber-portfolio', function () {
+        // filter items on button click
+        UI.toElements('.portfolio-menu').forEach(function (menu) {
+          menu.addEventListener('click', function (e) {
+            var item = e.target.closest && e.target.closest('p');
+            if (!item || !menu.contains(item)) return;
+            UI.isotope('.barber-portfolio', { filter: item.getAttribute('data-filter') });
+          });
         });
+        // init Isotope
+        UI.isotope('.barber-portfolio', {
+          itemSelector: '.single_gallery_item',
+          percentPosition: true,
+          masonry: {
+            columnWidth: '.single_gallery_item'
+          }
+        });
+      });
     }
-    
+
+    UI.toElements('.portfolio-menu button.btn').forEach(function (button) {
+      button.addEventListener('click', function () {
+        UI.toElements('.portfolio-menu button.btn').forEach(function (other) {
+          other.classList.remove('active');
+        });
+        button.classList.add('active');
+      });
+    });
+
+    UI.scrollUp({
+      scrollSpeed: 1500,
+      scrollText: '<i class="fa-solid fa-angle-up"></i>'
+    });
+
+    UI.counter('.counter', { time: 2000 });
+
     // MC Scripts
-    var $subscribe = $( '.barber-subscribe-newsletter-area' );
-    if( $subscribe.length ){
-        window.fnames = new Array();
-        window.ftypes = new Array();
-        fnames[0]='EMAIL';
-        ftypes[0]='email';
-        fnames[1]='FNAME';
-        ftypes[1]='text';
-        fnames[2]='LNAME';
-        ftypes[2]='text';
-        fnames[3]='ADDRESS';
-        ftypes[3]='address';
-        fnames[4]='PHONE';
-        ftypes[4]='phone';
-        fnames[5]='BIRTHDAY';
-        ftypes[5]='birthday';
+    if (document.querySelector('.barber-subscribe-newsletter-area')) {
+      window.fnames = ['EMAIL', 'FNAME', 'LNAME', 'ADDRESS', 'PHONE', 'BIRTHDAY'];
+      window.ftypes = ['email', 'text', 'text', 'address', 'phone', 'birthday'];
     }
 
+    // The old script also called Barfiller on .bar and the YouTube background
+    // plugin on [data-videoid], but this plugin never enqueued either library:
+    // the bars were left alone, and a [data-videoid] element made it throw.
+  }
 
-
-})(jQuery);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+}());

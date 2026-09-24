@@ -845,38 +845,47 @@ class Barber_Projects extends Widget_Base {
         if( \Elementor\Plugin::$instance->editor->is_edit_mode() === true  ) {
         ?>
         <script>
-        ( function( $ ){
-            //project details slider
-            $('.details_active').owlCarousel({
-                loop:true,
-                margin:0,
-            items:1,
-            // autoplay:true,
-            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
-            nav:true,
-            dots:false,
-            // autoplayHoverPause: true,
-            // autoplaySpeed: 800,
-                responsive:{
-                    0:{
-                        items:1,
-                        nav:false
-            
-                    },
-                    767:{
-                        items:1,
-                        nav:false
-                    },
-                    992:{
-                        items:1,
-                        nav:false
-                    },
-                    1200:{
-                        items:1,
+        (function () {
+            function run() {
+                var UI = window.ColorlibUI;
+                if (!UI) return;
+                //project details slider
+                UI.owl('.details_active', {
+                    loop:true,
+                    margin:0,
+                    items:1,
+                    // autoplay:true,
+                    navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+                    nav:true,
+                    dots:false,
+                    // autoplayHoverPause: true,
+                    // autoplaySpeed: 800,
+                    responsive:{
+                        0:{
+                            items:1,
+                            nav:false
+
+                        },
+                        767:{
+                            items:1,
+                            nav:false
+                        },
+                        992:{
+                            items:1,
+                            nav:false
+                        },
+                        1200:{
+                            items:1,
+                        }
                     }
-                }
-            });
-        })(jQuery);
+                });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
         </script>
         <?php 
         }
